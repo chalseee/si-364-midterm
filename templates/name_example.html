@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Visitors</h2>
+
+{% for n in names %}
+    <p><strong>Name: </strong>{{ n.name }}
+      <br />
+       <strong>Favorite TV show: </strong>{{ n.search_term }}</p>
+{% endfor %}
+
+{% if not names %}
+There haven't been any visitors logged yet.
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% block content %}
+<h2>Homepage</h2>
+
+<form action="{{ url_for('all_names') }}" method="GET">
+    {{ form.hidden_tag() }}
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.query.label() }} {{ form.query() }} <br>
+    {{ form.submit() }}
+</form>
+{% endblock %}
+
+<p>------------</p>
+<h3>Navigation</h3>
+<ul>
+    <li><a href="{{ url_for('home') }}">Homepage</a></li>
+    <li><a href="{{ url_for('all_movies')}}">Movies Added</a></li>
+    <li><a href="{{ url_for('all_names')}}">Past Visitors</a></li>
+    <li><a href="{{ url_for('popular_actors') }}">Actors</a></li>
+    <li><a href="{{ url_for('tv_shows') }}">TV Shows</a></li>
+</ul>

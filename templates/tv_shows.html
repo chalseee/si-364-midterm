@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>TV Shows</h2>
+{% for t in tv %}
+    <p><strong>Title: </strong>{{ t.tv_show_name }}<br />
+       <strong>First Air Date: </strong>{{ t.first_air_date }}<br />
+       <strong>Overview: </strong>{{ t.overview }}
+    </p>
+{% endfor %}
+{% endblock %}

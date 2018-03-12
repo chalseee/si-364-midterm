@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Movie Form</h2>
+
+<div style="color:red;">
+  {% for message in get_flashed_messages() %}
+    {{ message }}
+  {% endfor %}
+</div>
+
+<form action="{{ url_for('all_movies') }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.actor.label() }}{{ form.actor() }}<br>
+    {{ form.submit() }}
+</form>
+
+{% if not movies %}
+There haven't been any movies submitted yet.
+{% endif %}
+
+<h2>Movies Added</h2>
+{% for m in movies %}
+    <p><strong>Title: </strong>{{ m.title }}<br />
+       <strong>Release Date: </strong>{{ m.release_date }}<br />
+       <strong>Summary: </strong>{{ m.description }}
+    </p>
+{% endfor %}
+
+{% endblock %}

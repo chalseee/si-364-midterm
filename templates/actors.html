@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Most Popular Actors</h2>
+{% for a in actors %}
+  <p><strong>Name: </strong>{{ a.name }}
+    <br />
+    <strong>Popularity: </strong>{{ a.popularity }}
+  </p>
+{% endfor %}
+
+{% if not actors %}
+There haven't been any actors logged yet.
+{% endif %}
+
+{% endblock %}
